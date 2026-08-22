@@ -15,7 +15,7 @@ const products = [
     },
     {
         id: 3,
-        image: "/new3.png",
+        image: "/new3.jpg",
         title: "کفش کوهنوردی مردانه مدل RUNNER",
         price: 540000
     },
@@ -107,19 +107,19 @@ const products = [
     },
     {
         id: 18,
-        image: "/new3.png",
+        image: "/new3.jpg",
         title: "کفش کوهنوردی مردانه مدل RUNNER",
         price: 540000
     },
     {
         id: 19,
-        image: "new4.png",
+        image: "/new4.png",
         title: "ساک ورزشی مدل 90",
         price: 700000
     },
     {
         id: 20,
-        image: "new5.png",
+        image: "/new5.png",
         title: "شیکر بدنسازی مدل pro0097 سفید",
         price: 350000
     }
@@ -133,30 +133,53 @@ const same = [
     },
     {
         id: 2,
-        image: "/same.jpg",
+        image: "/same2.jpg",
         title: "کلاه محافظ دوچرخه سواری حرفه ای مدل limar",
         price: 1450000
     },
     {
         id: 3,
-        image: "/same.jpg",
+        image: "/same3.jpg",
         title: "چادر صحرایی کینگ کمپ مدل MARASUSA",
         price: 2540000
     },
     {
         id: 4,
-        image: "/same.jpg",
+        image: "/same4.jpg",
         title: "ست ورزشی مردانه مدل باشگاهی نایک",
         price: 430000
     },
     {
         id: 5,
-        image: "/same.jpg",
+        image: "/same5.jpg",
         title: "دستکش بوکس مارک reves",
         price: 970000
     }
 
 ]
+const sort = [
+    {
+        name:"پرفروش ترین",
+        value:"normal1"
+    },
+    {
+        name:"گران ترین",
+        value:"high"
+    },
+    {
+        name:"ارزان ترین",
+        value:"low"
+    },
+    {
+        name:"پربازدیدترین",
+        value:"normal2"
+    },
+    {
+        name:"جدیدترین",
+        value:"normal"
+    }
+
+]
 const newp = products.filter(item => item.id < 6)
 
-export { newp, products , same }
+export { newp, products , same , sort }

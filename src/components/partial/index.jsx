@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 export default function Layout({ children }) {
   return (
-    <>
+    <div className='w-full flex flex-col justify-center items-center'>
       <header>
         <nav>
           <Link to="/">صفحه اصلی</Link>
@@ -15,6 +15,6 @@ export default function Layout({ children }) {
         </div>
       </header>
       {children}
-    </>
+    </div>
   )
 }
