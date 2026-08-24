@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 import { products, sort } from '../../../../core/constants'
+import toPersianNumber from '../../../../components/ui/number'
 
 export default function Products() {
   const [Value, setValue] = useState("normal")
   const [sortedProducts, setSortedProducts] = useState(products)
-
+  const [currentPage, setCurrentPage] = useState(1)
+  const productPerPage = 20
+  const lastIndex = currentPage * productPerPage
+  const firstIndex = lastIndex - productPerPage
+  const currentProduct = sortedProducts.slice(firstIndex, lastIndex)
+  const totalPage = Math.ceil(sortedProducts.length / productPerPage)
   const btnhandler = (item) => {
     setValue(item.value)
 
@@ -44,15 +50,27 @@ export default function Products() {
       </div>
       <hr className='w-full bg-black h-[2px] mt-5' />
       <div className='flex flex-wrap gap-5 w-full justify-center mt-5'>
-        {sortedProducts.map((item, index) => (
-          <div key={index} className='w-[269px] shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
-            <img src={item.image} alt="" />
-            <p>{item.title}</p>
-            <p className=' flex '><span className={`${item.newprice ? "flex" : "hidden"}`}>تومان</span>{item.newprice}</p>
-            <p className=' flex '><span className={`${item.oldPrice ? "flex" : "hidden"}`}>تومان</span>{item.oldPrice}</p>
-            <p className='mt-10 flex '><span className={`${item.price ? "flex" : "hidden"}`}>تومان</span>{item.price}</p>
+        {currentProduct.map((item, index) => (
+          <div key={index} className='w-[269px]  shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
+            <div className='relative right-[95px] w-3/10 flex flex-col justify-center items-center top-6'>
+              <img src={item.img} alt="" className='absolute ' />
+              <p className={`relative bottom-3 right-2 text-[20px]  ${item.img ? "flex" : "hidden"} -rotate-45 `} >25%</p>
+            </div>
+            <img src={item.image} alt="" className='size-70' />
+            <p className='text-right w-full mb-10 mr-5 leading-5'>{item.title}</p>
+            <p className={` flex ${item.price ? "hidden" : "flex"} text-[24px] text-[#FFB800] gap-1 `}><span className={`${toPersianNumber(item.newprice) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.newprice)}</p>
+            <p className={` flex ${item.price ? "hidden" : "flex"} text-[16px] text-[#000000B2] line-through gap-1`}><span className={`${toPersianNumber(item.oldPrice) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.oldPrice)}</p>
+            <p className={`flex text-[24px] ${item.newprice || item.oldPrice ? "hidden" : "flex"} font-normal gap-1`} ><span className={`${(item.price) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.price)}</p>
           </div>
+
         ))}
+        <div className='flex gap-5 mt-10 mb-10 flex-row-reverse'>
+          {Array.from({ length: totalPage }, (_, index) => (
+            <button className={`rounded-2xl p-3 w-15 text-[20px] ${currentPage === index+1 ? "bg-[#FFB800] border-none text-white" : "bg-white text-[#282828] border border-[#282828]" }`} onClick={() => setCurrentPage(index + 1)} key={index}>
+              {index + 1}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
 
