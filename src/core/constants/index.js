@@ -21,13 +21,13 @@ const products = [
     },
     {
         id: 4,
-        image: "new4.png",
+        image: "/new4.png",
         title: "ساک ورزشی مدل 90",
         price: 700000
     },
     {
         id: 5,
-        image: "new5.png",
+        image: "/new5.png",
         title: "شیکر بدنسازی مدل pro0097 سفید",
         price: 350000
     },
@@ -307,5 +307,55 @@ const sort = [
 
 ]
 const newp = products.filter(item => item.id < 6)
-
-export { newp, products, same, sort }
+const btn = [
+    {
+        id: 1,
+        name: "نظرات",
+        value: "comments"
+    },
+    {
+        id: 2,
+        name: "مشخصات",
+        value: "info"
+    },
+    {
+        id: 3,
+        name: "توضیحات",
+        value: "description"
+    }
+]
+const specifications = [
+  {
+    name: "نام برند",
+    value: "کینگتکس، Kingtex"
+  },
+  {
+    name: "کاربرد",
+    value: "کمربندی چند روزه"
+  },
+  {
+    name: "جنس رویه",
+    value: "نیوپان (چرم طبیعی-گاو)"
+  },
+  {
+    name: "نوع کفی",
+    value: "معمولی"
+  },
+  {
+    name: "جنس زیره",
+    value: "Vibram"
+  },
+  {
+    name: "وزن",
+    value: "640 گرم"
+  },
+  {
+    name: "خاصیت ضد آب",
+    value: "دارد"
+  },
+  {
+    name: "سایر ویژگی ها",
+    value: "دارای لایه تقویتی KINGTEX"
+  }
+]
+export { newp, products, same, sort, btn  , specifications }
