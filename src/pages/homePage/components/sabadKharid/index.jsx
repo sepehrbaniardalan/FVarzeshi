@@ -1,7 +1,19 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import toPersianNumber from "../../../../components/ui/number";
+import { decreaseQuantity, increaseQuantity, removeFromCart } from "../../../../redux/cartSlice";
 
 export default function SabadKharid() {
+    const dispatch = useDispatch()
+    const removehandler = (item) => {
+        dispatch(removeFromCart(item.id))
+    }
+    const decreas = (item) => {
+        dispatch(decreaseQuantity(item.id))
+    }
+    const increas = (item) => {
+        dispatch(increaseQuantity(item.id))
+    }
+    
     const items = useSelector(state => state.cart.items)
     return (
         <div>
@@ -15,7 +27,7 @@ export default function SabadKharid() {
                 <hr />
                 {items.map((item, index) => (
                     <div key={index}>
-                        <button>
+                        <button onClick={() => removehandler(item)}>
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 1L1 11M1 1L11 11" stroke="#282828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
@@ -41,9 +53,9 @@ export default function SabadKharid() {
                             )}
                         </div>
                         <div>
-                            <button>-</button>
+                            <button onClick={() => decreas(item)}>-</button>
                             <p>{item.quantity}</p>
-                            <button>+</button>
+                            <button onClick={() => increas(item)}>+</button>
                         </div>
                         <div>
                             <p>{item.title}</p>

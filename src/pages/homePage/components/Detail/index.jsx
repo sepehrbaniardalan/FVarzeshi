@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom"
-import { btn, products, specifications } from "../../../../core/constants"
+import { Link, useParams } from "react-router-dom"
+import { btn, products, same, specifications } from "../../../../core/constants"
 import toPersianNumber from "../../../../components/ui/number"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -26,10 +26,10 @@ function Detail() {
     }
     const btnAddhandler = () => {
         dispatch(addToCart(t)),
-        console.log(items);
+            console.log(items);
     }
     return (
-        <div className="mt-20 w-9/10">
+        <div className="mt-20 w-9/10 flex flex-col items-center">
             <div className="w-full flex justify-center items-center gap-10">
                 <div className="flex flex-col items-end gap-10">
                     <p className="font-semibold text-[40px] w-150 text-right">{product.title}</p>
@@ -99,7 +99,7 @@ function Detail() {
                     </div>
                 </div>
             </div>
-            <div className="flex w-8/11 flex-col-reverse items-end gap-5 ml-60 mt-30 ">
+            <div className="flex w-8/11 flex-col-reverse items-end gap-5  mt-30 ">
                 <div className="mt-10 w-full">
                     {activateTab === "description" && (
                         <div className="flex flex-col items-end gap-5">
@@ -136,6 +136,26 @@ function Detail() {
                         ))}
                     </div>
                     <div className=" bottom-0 left-0 w-full border-b border-[#D0D0D0]" />
+                </div>
+            </div>
+            <div className="h-[1px] w-8/11 mt-30 bg-[repeating-linear-gradient(to_right,#B0B0B0_0px,#B0B0B0_15px,transparent_15px,transparent_30px)]"></div>            
+            <div className="flex flex-col gap-10">
+                <p className="mt-50 flex flex-col items-center text-[#000000] text-[40px]">محصولات مشابه</p>
+                <div className="flex justify-center gap-10  ">
+                    {same.map((item, index) => (
+                        <div key={index} className='w-[219px]  shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
+                            <div className='relative right-[95px] w-3/10 flex flex-col justify-center items-center top-6'>
+                                <img src={item.img} alt="" className='absolute ' />
+
+                                <p className={`relative bottom-3 right-2 text-[20px]  ${item.img ? "flex" : "hidden"} -rotate-45 `} >25%</p>
+                            </div>
+                            <Link>
+                                <img src={item.image} alt="" className='size-50' />
+                            </Link>
+                            <p className='text-right w-full mb-10 mr-5 leading-5'>{item.title}</p>
+                            <p className={`flex text-[24px] font-normal gap-1`} ><span>تومان</span>{toPersianNumber(item.price)}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
