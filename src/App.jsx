@@ -11,6 +11,8 @@ import Layout from './components/partial'
 import Sale from './pages/homePage/components/sale'
 import About from './pages/homePage/components/about'
 import Login from './pages/homePage/components/login'
+import Detail from './pages/homePage/components/Detail'
+import SabadKharid from './pages/homePage/components/sabadKharid'
 export default function App() {
   return (
     <Layout>
@@ -20,6 +22,8 @@ export default function App() {
         <Route path="/sale" element={<Sale />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path='/Detail/:id' element={<Detail />}></Route>
+        <Route path='/sabadKharid' element={<SabadKharid />} />
       </Routes>
     </Layout>
   )
