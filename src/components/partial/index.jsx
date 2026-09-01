@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { Link } from 'react-router-dom'
-export default function Layout() {
+export default function Layout({children}) {
   return (
+    <>
     <header>
       <nav>
         <Link to="/">صفحه اصلی</Link>
@@ -13,5 +14,7 @@ export default function Layout() {
         <Link to="/login">ورود / ثبت نام</Link>
       </div>
     </header>
+    {children}
+    </>
   )
 }
