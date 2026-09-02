@@ -325,37 +325,75 @@ const btn = [
     }
 ]
 const specifications = [
-  {
-    name: "نام برند",
-    value: "کینگتکس، Kingtex"
-  },
-  {
-    name: "کاربرد",
-    value: "کمربندی چند روزه"
-  },
-  {
-    name: "جنس رویه",
-    value: "نیوپان (چرم طبیعی-گاو)"
-  },
-  {
-    name: "نوع کفی",
-    value: "معمولی"
-  },
-  {
-    name: "جنس زیره",
-    value: "Vibram"
-  },
-  {
-    name: "وزن",
-    value: "640 گرم"
-  },
-  {
-    name: "خاصیت ضد آب",
-    value: "دارد"
-  },
-  {
-    name: "سایر ویژگی ها",
-    value: "دارای لایه تقویتی KINGTEX"
-  }
+    {
+        name: "نام برند",
+        value: "کینگتکس، Kingtex"
+    },
+    {
+        name: "کاربرد",
+        value: "کمربندی چند روزه"
+    },
+    {
+        name: "جنس رویه",
+        value: "نیوپان (چرم طبیعی-گاو)"
+    },
+    {
+        name: "نوع کفی",
+        value: "معمولی"
+    },
+    {
+        name: "جنس زیره",
+        value: "Vibram"
+    },
+    {
+        name: "وزن",
+        value: "640 گرم"
+    },
+    {
+        name: "خاصیت ضد آب",
+        value: "دارد"
+    },
+    {
+        name: "سایر ویژگی ها",
+        value: "دارای لایه تقویتی KINGTEX"
+    }
 ]
-export { newp, products, same, sort, btn  , specifications }
+const footer1 = [
+    {
+        svg: "/icon.png"
+        , name: "ضمانت اصالت کالا"
+    },
+    {
+        svg: "/icon2.png"
+        , name: "7روز ضمانت بازگشت"
+    },
+    {
+        svg: "/icon3.png"
+        , name: "پشتیبانی 24 ساعته"
+    },
+    {
+        svg: "/icon4.png"
+
+
+        , name: "ارسال سریع به سراسر ایران"
+    },
+    {
+        svg: "/icon5.png"
+        , name: "ارائه بهترین خدمات"
+    }
+]
+const footer2 = [
+    {
+        title:"لینک های مفید",
+        name1:"درباره ما",
+        name2:"قوانین",
+        name3:"سوالات متداول"
+    },
+    {
+        title:"خدمات مشتریان",
+        name1:"درباره ما",
+        name2:"قوانین",
+        name3:"سوالات متداول"
+    }
+]
+export { newp, products, same, sort, btn, specifications , footer1 ,footer2 }

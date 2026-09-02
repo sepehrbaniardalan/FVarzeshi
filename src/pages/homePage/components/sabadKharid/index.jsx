@@ -24,7 +24,7 @@ export default function SabadKharid() {
 
     );
     const offer = items.reduce(
-        (sum, item) => item.newprice && item.oldPrice ? sum + item.oldPrice * item.quantity - item.newprice * item.quantity : 0, 0
+        (sum, item) => item.newprice && item.oldPrice ? sum + item.oldPrice * item.quantity - item.newprice * item.quantity : sum + 0, 0
     )
 
 
@@ -69,26 +69,41 @@ export default function SabadKharid() {
                     {items.map((item, index) => (
                         <div>
                             <div key={index} className="flex w-full justify-end items-center gap-5">
-                                <button className="mr-10" onClick={() => removehandler(item)}>
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 1L1 11M1 1L11 11" stroke="#282828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <button
+                                    className="mr-10 w-5 text-[#282828] hover:text-red-500 transition-colors duration-200"
+                                    onClick={() => removehandler(item)}
+                                >
+                                    <svg
+                                        width="12"
+                                        height="12"
+                                        viewBox="0 0 12 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M11 1L1 11M1 1L11 11"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        />
                                     </svg>
                                 </button>
                                 <div className="flex flex-col mr-30">
                                     {item.newprice && item.oldPrice ? (
                                         <>
-                                            <p className="flex text-[24px] text-[#FFB800] gap-1">
+                                            <p className="flex text-[24px] text-[#FFB800] gap-1 w-30">
                                                 <span className="text-[20px]">تومان</span>
                                                 {toPersianNumber(item.newprice.toLocaleString())}
                                             </p>
 
-                                            <p className="flex text-[16px] text-[#000000B2] line-through gap-1 justify-center items-center">
+                                            <p className="flex text-[16px] text-[#000000B2] line-through gap-1 justify-center items-center w-30">
                                                 <span className="text-[20px]">تومان</span>
                                                 {toPersianNumber(item.oldPrice.toLocaleString())}
                                             </p>
                                         </>
                                     ) : (
-                                        <p className="flex text-[24px] font-normal gap-1">
+                                        <p className="flex text-[24px] font-normal gap-1 w-30">
                                             <span className="text-[20px]">تومان</span>
                                             {item.price ? toPersianNumber(item.price.toLocaleString()) : ""}
                                         </p>
