@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { configureStore } from "@reduxjs/toolkit";
-import Header from './pages/homePage/components/header'
 import Home from './pages/homePage/components/home'
 import Products from './pages/homePage/components/products'
 import Layout from './components/partial'
