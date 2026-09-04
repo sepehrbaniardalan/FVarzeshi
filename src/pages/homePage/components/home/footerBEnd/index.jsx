@@ -5,7 +5,7 @@ export default function FooterBEnd() {
     <div>
       <div className=''>
         <h3 dir='rtl' className='font-semibold text-4xl  font-vazir pr-45'>پیشنهاد ما</h3>
-        <h3 className='text-xl pl-45 relative -top-4'>بیشتر</h3>
+        <h3 className='text-xl pl-45 relative -top-8'>بیشتر</h3>
       </div>
       <div className='flex justify-center gap-4'>
         <Cards name="کفش کوهنوردی مردانه مدل RUNNER" price="3,980,000" img="/productSuggest/shoes.png" />
