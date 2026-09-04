@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   const items = useSelector(state => state.cart.items);
 
   return (
-    <div className='w-full flex flex-col justify-center items-center'>
+    <div className='w-full flex flex-col justify-center items-center '>
       <header className='w-full flex flex-row-reverse justify-center items-center gap-190  p-5 shadow-2xl h-30  '>
         <nav className='flex flex-row-reverse justify-center items-center gap-10 '>
           <svg width="74" height="78" viewBox="0 0 74 78" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@ export default function Layout({ children }) {
         </div>
       </header >
       {children}
-      <footer className='w-full bg-[#282828] flex flex-col gap-10 items-center'>
+      <footer className='w-full bg-[#282828] flex flex-col gap-10 items-center mt-30'>
         <div className='flex w-8/10 justify-around items-center'>
           {footer1.map((item, index) => (
             <div className='flex flex-col mt-5 gap-3 items-center' key={index}>

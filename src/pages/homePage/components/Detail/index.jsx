@@ -4,6 +4,7 @@ import toPersianNumber from "../../../../components/ui/number"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addToCart } from "../../../../redux/cartSlice"
+import Reviews from "../comments"
 
 function Detail() {
     const btn2handler = () => {
@@ -108,9 +109,7 @@ function Detail() {
                         </div>)
                     }
                     {activateTab === "comments" && (
-                        <div>
-                            <h1>hi</h1>
-                        </div>
+                        <Reviews />
                     )
                     }
                     {activateTab === "info" && (
@@ -149,7 +148,7 @@ function Detail() {
 
                                 <p className={`relative bottom-3 right-2 text-[20px]  ${item.img ? "flex" : "hidden"} -rotate-45 `} >25%</p>
                             </div>
-                            <Link>
+                            <Link to={`/Detail/${item.id}`}>
                                 <img src={item.image} alt="" className='size-50' />
                             </Link>
                             <p className='text-right w-full mb-10 mr-5 leading-5'>{item.title}</p>
