@@ -76,22 +76,22 @@ function Detail() {
                         <button className="border-1 border-[#282828] rounded-[10px] p-2 size-12 text-[#282828]">40</button>
                         <button className="border-1 border-[#282828] rounded-[10px] p-2 size-12 text-[#282828]">41</button>
                     </div>
-                    <div className="flex gap-5">
-                        <div className="bg-[#F0C400] rounded-[15px] p-3 w-100 gap-5 flex justify-center items-center text-[#FFFFFF] text-[36px]" >
+                    <div className="flex gap-5 items-center">
+                        <div className="bg-[#F0C400] rounded-[10px] h-15 p-3 w-8/10 gap-5 flex justify-center items-center text-[#FFFFFF] text-[36px]" >
                             <button onClick={btnAddhandler}>افزودن به سبد خرید</button>
                             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.6667 26.6667C24.8167 26.6667 23.3333 28.15 23.3333 30C23.3333 30.8841 23.6845 31.7319 24.3096 32.357C24.9348 32.9821 25.7826 33.3333 26.6667 33.3333C27.5507 33.3333 28.3986 32.9821 29.0237 32.357C29.6488 31.7319 30 30.8841 30 30C30 29.1159 29.6488 28.2681 29.0237 27.643C28.3986 27.0179 27.5507 26.6667 26.6667 26.6667ZM0 0V3.33333H3.33333L9.33333 15.9833L7.06667 20.0667C6.81667 20.5333 6.66667 21.0833 6.66667 21.6667C6.66667 22.5507 7.01786 23.3986 7.64298 24.0237C8.2681 24.6488 9.11594 25 10 25H30V21.6667H10.7C10.5895 21.6667 10.4835 21.6228 10.4054 21.5446C10.3272 21.4665 10.2833 21.3605 10.2833 21.25C10.2833 21.1667 10.3 21.1 10.3333 21.05L11.8333 18.3333H24.25C25.5 18.3333 26.6 17.6333 27.1667 16.6167L33.1333 5.83333C33.25 5.56667 33.3333 5.28333 33.3333 5C33.3333 4.55797 33.1577 4.13405 32.8452 3.82149C32.5326 3.50893 32.1087 3.33333 31.6667 3.33333H7.01667L5.45 0M10 26.6667C8.15 26.6667 6.66667 28.15 6.66667 30C6.66667 30.8841 7.01786 31.7319 7.64298 32.357C8.2681 32.9821 9.11594 33.3333 10 33.3333C10.8841 33.3333 11.7319 32.9821 12.357 32.357C12.9821 31.7319 13.3333 30.8841 13.3333 30C13.3333 29.1159 12.9821 28.2681 12.357 27.643C11.7319 27.0179 10.8841 26.6667 10 26.6667Z" fill="white" fill-opacity="0.9" />
                             </svg>
                         </div>
-                        <div className="flex justify-center items-center border border-[#00000080] rounded-2xl w-40 ">
-                            <button onClick={btn2handler} className="flex justify-center items-center text-center relative right-2 text-[#000000B2] text-[48px]">-</button>
-                            <p className="w-20 flex relative  justify-center items-center border-r border-l h-full text-[48px]">{sabad}</p>
-                            <button onClick={() => setSabad(sabad + 1)} className="flex justify-center items-center text-center relative left-2 text-[#000000B2] text-[48px]">+</button>
+                        <div className="flex justify-center items-center border border-[#00000080] rounded-[10px] w-40 h-15 ">
+                            <button onClick={btn2handler} className="flex justify-center items-center text-center relative right-1 text-[#000000B2] text-[48px]">-</button>
+                            <p className="w-20 flex relative  justify-center items-center border-r border-l pt-1 h-full text-[40px]">{sabad}</p>
+                            <button onClick={() => setSabad(sabad + 1)} className="flex justify-center items-center text-center relative left-1 text-[#000000B2] text-[48px]">+</button>
                         </div>
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                    <img className="size-150 shadow-2xl mb-5 w-170 rounded-2xl" src={product.image} alt="" />
+                    <img className="size-130 shadow-2xl mb-5 w-150 rounded-2xl" src={product.image} alt="" />
                     <div className="flex gap-5">
                         <img className="size-35 rounded-2xl shadow-2xl" src="/color.jpg" alt="" />
                         <img className="size-35 rounded-2xl shadow-2xl" src="/color2.jpg" alt="" />
@@ -100,7 +100,7 @@ function Detail() {
                     </div>
                 </div>
             </div>
-            <div className="flex w-8/11 flex-col-reverse items-end gap-5  mt-30 ">
+            <div className="flex w-9/11 flex-col-reverse items-end gap-5  mt-30 ">
                 <div className="mt-10 w-full">
                     {activateTab === "description" && (
                         <div className="flex flex-col items-end gap-5">
@@ -137,15 +137,14 @@ function Detail() {
                     <div className=" bottom-0 left-0 w-full border-b border-[#D0D0D0]" />
                 </div>
             </div>
-            <div className="h-[1px] w-8/11 mt-30 bg-[repeating-linear-gradient(to_right,#B0B0B0_0px,#B0B0B0_15px,transparent_15px,transparent_30px)]"></div>            
+            <div className="h-[1px] w-9/11 mt-30 bg-[repeating-linear-gradient(to_right,#B0B0B0_0px,#B0B0B0_15px,transparent_15px,transparent_30px)]"></div>            
             <div className="flex flex-col gap-10">
                 <p className="mt-50 flex flex-col items-center text-[#000000] text-[40px]">محصولات مشابه</p>
                 <div className="flex justify-center gap-10  ">
                     {same.map((item, index) => (
-                        <div key={index} className='w-[219px]  shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
+                        <div key={index} className='w-[219px] mb-20  shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
                             <div className='relative right-[95px] w-3/10 flex flex-col justify-center items-center top-6'>
-                                <img src={item.img} alt="" className='absolute ' />
-
+                                <img src={item.img} alt="" className='absolute' />
                                 <p className={`relative bottom-3 right-2 text-[20px]  ${item.img ? "flex" : "hidden"} -rotate-45 `} >25%</p>
                             </div>
                             <Link to={`/Detail/${item.id}`}>

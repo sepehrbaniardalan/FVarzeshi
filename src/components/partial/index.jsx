@@ -38,7 +38,7 @@ export default function Layout({ children }) {
         </div>
       </header >
       {children}
-      <footer className='w-full bg-[#282828] flex flex-col gap-10 items-center mt-30'>
+      <footer className='w-full bg-[#282828] flex flex-col gap-10 items-center '>
         <div className='flex w-8/10 justify-around items-center'>
           {footer1.map((item, index) => (
             <div className='flex flex-col mt-5 gap-3 items-center' key={index}>

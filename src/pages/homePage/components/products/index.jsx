@@ -52,16 +52,16 @@ export default function Products() {
       <hr className='w-full bg-black h-[2px] mt-5' />
       <div className='flex flex-wrap gap-5 w-full justify-center mt-5'>
         {currentProduct.map((item, index) => (
-          <div key={index} className='w-[269px]  shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
+          <div key={index} className='w-185/1000  shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
             <div className='relative right-[95px] w-3/10 flex flex-col justify-center items-center top-6'>
-              <img src={item.img} alt="" className='absolute ' />
+              <img src={item.img}  alt="" className='absolute ' />
 
               <p className={`relative bottom-3 right-2 text-[20px]  ${item.img ? "flex" : "hidden"} -rotate-45 `} >25%</p>
             </div>
             <Link to={`/Detail/${item.id}`}>
-              <img src={item.image} alt="" className='size-70' />
+              <img src={item.image} alt="" className='size-50' />
             </Link>
-            <p className='text-right w-full mb-10 mr-5 leading-5'>{item.title}</p>
+            <p className='text-right w-full mb-10 mr-2 leading-5'>{item.title}</p>
             <p className={` flex ${item.price ? "hidden" : "flex"} text-[24px] text-[#FFB800] gap-1 `}><span className={`${toPersianNumber(item.newprice) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.newprice)}</p>
             <p className={` flex ${item.price ? "hidden" : "flex"} text-[16px] text-[#000000B2] line-through gap-1`}><span className={`${toPersianNumber(item.oldPrice) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.oldPrice)}</p>
             <p className={`flex text-[24px] ${item.newprice || item.oldPrice ? "hidden" : "flex"} font-normal gap-1`} ><span className={`${(item.price) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.price)}</p>

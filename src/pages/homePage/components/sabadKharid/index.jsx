@@ -29,13 +29,13 @@ export default function SabadKharid() {
 
 
     return (
-        <div className="w-full flex flex-col items-center justify-center pb-20 bg-gray-100">
-            <div className="flex justify-center  relative w-9/11 mt-20 gap-10">
+        <div className="w-full flex  flex-col items-center justify-center pb-20 bg-gray-100">
+            <div className="flex  justify-center  relative w-9/11 mt-20 gap-10">
                 <hr className="w-85/110  bg-[#000000CC] border-none h-[2px] " />
                 <p className="relative w-60 bottom-5 text-[#F0C400] text-[32px] ">سبد خرید شما</p>
             </div>
             <div className="flex w-9/11 gap-12 justify-center">
-                <div className="w-17/80 h-115 bg-white rounded-2xl gap-10 flex flex-col items-center p-5">
+                <div className="w-20/80 h-115 bg-white rounded-2xl gap-10 flex flex-col items-center p-5">
                     <div className="flex flex-col w-full gap-5 ">
                         <div className="flex justify-between">
                             <p className="flex gap-2 justify-center text-[#000000D9] text-[24px] items-center"> <span>تومان</span> {toPersianNumber(total2.toLocaleString())}</p>
@@ -61,18 +61,30 @@ export default function SabadKharid() {
                 </div>
                 <div className="w-85/130 bg-white rounded-2xl flex flex-col gap-10 mr-10">
                     <div className="flex items-center justify-around w-full relative right-15 mt-5">
-                        <div className="w-5/10 flex items-center justify-around">
-                            <p className="text-[#282828] text-[25px]">قیمت کل</p>
-                            <p className="text-[#282828] text-[25px]">تعداد</p>
-                        </div>
-                        <p className="text-[#282828] text-[25px]">محصولات</p>
+                        {items.length === 0 ? (
+                            <p className="text-center text-xl text-[#282828]">
+                                
+                            </p>
+                        ) : (
+                            <>
+                                <div className="w-5/10 flex items-center justify-around">
+                                    <p className="text-[#282828] text-[25px]">قیمت کل</p>
+                                    <p className="text-[#282828] text-[25px]">تعداد</p>
+                                </div>
+                                <p className="text-[#282828] text-[25px]">محصولات</p>
+                            </>
+                        )}
                     </div>
                     <div className="h-[1px] w-full bg-[repeating-linear-gradient(to_right,#B0B0B0_0px,#B0B0B0_15px,transparent_15px,transparent_30px)]"></div>
-                    {items.map((item, index) => (
+                    {items.length === 0 ? (
+                        <p className="text-center text-xl text-[#282828]">
+                            سبد خرید خالی است
+                        </p>
+                    ) : (items.map((item, index) => (
                         <div>
-                            <div key={index} className="flex w-full justify-end items-center gap-5">
+                            <div key={index} className="flex w-full justify-around items-center gap-5">
                                 <button
-                                    className="mr-10 w-5 text-[#282828] hover:text-red-500 transition-colors duration-200"
+                                    className=" relative left-5 w-1/10 text-[#282828] hover:text-red-500 transition-colors duration-200"
                                     onClick={() => removehandler(item)}
                                 >
                                     <svg
@@ -91,33 +103,33 @@ export default function SabadKharid() {
                                         />
                                     </svg>
                                 </button>
-                                <div className="flex flex-col mr-30">
+                                <div className="flex flex-col ">
                                     {item.newprice && item.oldPrice ? (
                                         <>
                                             <p className="flex text-[24px] text-[#FFB800] gap-1 w-30">
                                                 <span className="text-[20px]">تومان</span>
-                                                {toPersianNumber(item.newprice.toLocaleString())}
+                                                {toPersianNumber(item.newprice * item.quantity.toLocaleString())}
                                             </p>
 
                                             <p className="flex text-[16px] text-[#000000B2] line-through gap-1 justify-center items-center w-30">
                                                 <span className="text-[20px]">تومان</span>
-                                                {toPersianNumber(item.oldPrice.toLocaleString())}
+                                                {toPersianNumber(item.oldPrice * item.quantity.toLocaleString())}
                                             </p>
                                         </>
                                     ) : (
                                         <p className="flex text-[24px] font-normal gap-1 w-30">
                                             <span className="text-[20px]">تومان</span>
-                                            {item.price ? toPersianNumber(item.price.toLocaleString()) : ""}
+                                            {item.price ? toPersianNumber(item.price * item.quantity.toLocaleString()) : ""}
                                         </p>
                                     )}
                                 </div>
-                                <div className=" w-30 flex gap-2 border border-[#00000080] rounded-2xl justify-center items-center">
+                                <div className=" w-15/100 relative left-12 flex gap-2 border border-[#00000080] rounded-2xl justify-center items-center">
                                     <button className="font-medium text-[#F0C400] text-[24px]" onClick={() => decreas(item)}>-</button>
                                     <p className="border-r border-l border-[#00000080] p-2 w-5/10 text-center text-[#282828] text-[16px] font-medium">{item.quantity}</p>
                                     <button className="font-medium text-[#F0C400] text-[24px]" onClick={() => increas(item)}>+</button>
                                 </div>
                                 <div className="flex flex-col items-end gap-3 w-90">
-                                    <p className="text-[14px] font-light">{item.title}</p>
+                                    <p className="text-[14px] text-right font-light">{item.title}</p>
                                     <p className="flex gap-2 justify-center items-center ">
                                         <span className="font-light text-[11px]">آبی</span>
                                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,9 +143,9 @@ export default function SabadKharid() {
                                 <hr className="bg-[#00000033] border-none h-[2px]" />
                             )}
                         </div>
-                    ))}
+                    )))}
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
