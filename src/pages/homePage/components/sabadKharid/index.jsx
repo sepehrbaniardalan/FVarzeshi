@@ -60,10 +60,12 @@ export default function SabadKharid() {
                     <button className="text-[34px] text-[#FFFFFF] bg-[#F0C400] rounded-2xl text-center p-2 w-full" onClick={() => dispatch(clearCart())}>ثبت سفارش</button>
                 </div>
                 <div className="w-85/130 bg-white rounded-2xl flex flex-col gap-10 mr-10">
-                    <div className="flex items-center mt-5">
-                        <p className="text-[#282828] text-[25px] ml-30">قیمت کل</p>
-                        <p className="text-[#282828] text-[25px] ml-50">تعداد</p>
-                        <p className="text-[#282828] text-[25px] ml-85">محصولات</p>
+                    <div className="flex items-center justify-around w-full relative right-15 mt-5">
+                        <div className="w-5/10 flex items-center justify-around">
+                            <p className="text-[#282828] text-[25px]">قیمت کل</p>
+                            <p className="text-[#282828] text-[25px]">تعداد</p>
+                        </div>
+                        <p className="text-[#282828] text-[25px]">محصولات</p>
                     </div>
                     <div className="h-[1px] w-full bg-[repeating-linear-gradient(to_right,#B0B0B0_0px,#B0B0B0_15px,transparent_15px,transparent_30px)]"></div>
                     {items.map((item, index) => (

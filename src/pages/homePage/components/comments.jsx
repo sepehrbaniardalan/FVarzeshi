@@ -46,7 +46,8 @@ function ThumbsDownIcon() {
 
 export default function Reviews() {
   return (
-    <div dir="ltr" className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 p-6">
+    <div dir="ltr" className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-1
+    0 p-6">
       <div dir="rtl" className="md:col-span-1">
         <div className="flex items-center gap-3">
           <span className="text-4xl font-bold text-neutral-800">4.2</span>

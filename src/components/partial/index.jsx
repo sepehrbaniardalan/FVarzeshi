@@ -8,19 +8,19 @@ export default function Layout({ children }) {
 
   return (
     <div className='w-full flex flex-col justify-center items-center '>
-      <header className='w-full flex flex-row-reverse justify-center items-center gap-190  p-5 shadow-2xl h-30  '>
-        <nav className='flex flex-row-reverse justify-center items-center gap-10 '>
+      <header className='w-full flex flex-row-reverse justify-center items-center gap-130  p-5 shadow-2xl h-30  '>
+        <nav className='flex w-6/10 flex-row-reverse justify-around items-center  '>
           <svg width="74" height="78" viewBox="0 0 74 78" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 77.4688C15.2573 57.1632 29.091 48.331 65.3953 38.1562L71.5907 51.7123H63.6744L74 77.4688H59.8884L49.907 54.7624C34.1538 61.38 27.9318 66.0585 15.8326 77.4688H0Z" fill="#F0C400" />
             <path d="M15.0312 55.5L43.4216 0L58.9688 33.9167C40.117 39.4793 30.6227 44.4146 15.0312 55.5Z" fill="black" />
           </svg>
-          <Link className='font-extralight text-[28px] text-[#000000CC]' to="/">صفحه اصلی</Link>
-          <Link className='font-extralight text-[28px] text-[#000000CC]' to="/products">محصولات</Link>
-          <Link className='font-extralight text-[28px] text-[#000000CC]' to="/sale">فروش ویژه</Link>
-          <Link className='font-extralight text-[28px] text-[#000000CC]' to="/about">درباره ما</Link>
+          <Link className='font-extralight text-[22px]  text-[#000000CC]' to="/">صفحه اصلی</Link>
+          <Link className='font-extralight text-[22px]  text-[#000000CC]' to="/products">محصولات</Link>
+          <Link className='font-extralight text-[22px]  text-[#000000CC]' to="/sale">فروش ویژه</Link>
+          <Link className='font-extralight text-[22px]  text-[#000000CC]' to="/about">درباره ما</Link>
 
         </nav>
-        <div className="flex justify-center items-center flex-row-reverse gap-10 ">
+        <div className="flex w-3/10 justify-center items-center flex-row-reverse gap-10 ">
           <div className='flex gap-5 justify-center items-center border-2 border-[#F0C400]  rounded-[10px] p-3'>
             <Link className='text-[24px]' to="/login">ورود / ثبت نام</Link>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,11 +48,11 @@ export default function Layout({ children }) {
           ))}
         </div>
         <hr className='bg-[#FFFFFF40] w-8/10 border-none h-[1px] ' />
-        <div className='flex w-full justify-end gap-10 mr-15 '>
-          <div className='flex justify-end items-end gap-90 w-8/10'>
-            <div className='flex gap-60'>
+        <div className='flex w-full justify-end mr-15 '>
+          <div className='flex justify-end items-end  w-8/10'>
+            <div className='flex w-5/10 gap-30'>
               {footer2.map((item, index) => (
-                <div key={index} className='flex gap-0 relative bottom-15 flex-col items-end'>
+                <div key={index} className='flex bottom-10  gap-3 relative  flex-col items-end'>
                   <h1 className='text-[32px] text-[#FFFFFF] mb-3'>{item.title}</h1>
                   <NavLink className="text-[26px] text-[#FFFFFF] font-extralight" to={"/about"}>{item.name1}</NavLink>
                   <p className="text-[26px] text-[#FFFFFF] font-extralight">{item.name2}</p>
@@ -60,7 +60,7 @@ export default function Layout({ children }) {
                 </div>
               ))}
             </div>
-            <div className='flex gap-10 flex-col'>
+            <div className='flex w-5/10 gap-10 flex-col'>
               <div className='flex gap-5 justify-end'>
                 <p className='text-[20px] text-[#FFFFFF]'>09125854944</p>
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,8 +92,8 @@ export default function Layout({ children }) {
             <path d="M24.375 90L70.4135 0L95.625 55C65.0546 64.0204 49.6585 72.0237 24.375 90Z" fill="black" />
           </svg>
         </div>
-        <div className='relative flex  w-full items-center gap-10 mt-10'>
-          <hr className=' w-85/100 bg-[#FFFFFF40] border-none h-[1px]' />
+        <div className='relative flex  w-full items-center  justify-around mt-10'>
+          <hr className=' w-83/100 bg-[#FFFFFF40] border-none h-[1px]' />
           <p className='relative flex gap-2 text-[32px] text-[#FFFFFF] '><span className='text-yellow-400'>آکو اسپورت</span>درباره</p>
         </div>
         <div className='flex justify-around gap-30'>
