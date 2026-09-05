@@ -8,3 +8,14 @@
 @theme {
   --font-vazir: 'Vazir', sans-serif;
 }
+@import "tailwindcss";
+
+
+
+body{
+    font-family: "Vazirmatn", sans-serif;
+}
+
+
+
+
