@@ -4,11 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
 import './index.css'
-createRoot(document.getElementById('root')).render(
 import { Provider } from "react-redux";
+createRoot(document.getElementById('root')).render()
 
 import "./index.css";
-import App from "./App.jsx";
 import { store } from "./redux/store.js";
 
 createRoot(document.getElementById("root")).render(
