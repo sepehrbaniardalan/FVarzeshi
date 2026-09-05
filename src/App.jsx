@@ -15,17 +15,24 @@ import Detail from './pages/homePage/components/Detail'
 import SabadKharid from './pages/homePage/components/sabadKharid'
 export default function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/sale" element={<Sale />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/login2" element={<Login2 />} />
-        <Route path='/Detail/:id' element={<Detail />}></Route>
-        <Route path='/sabadKharid' element={<SabadKharid />} />
-      </Routes>
-    </Layout>
-  )
+  <Routes>
+    <Route path="/login" element={<Login />} />
+    <Route path="/login2" element={<Login2 />} />
+    <Route
+      path="*"
+      element={
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/sale" element={<Sale />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/Detail/:id" element={<Detail />} />
+            <Route path="/sabadKharid" element={<SabadKharid />} />
+          </Routes>
+        </Layout>
+      }
+    />
+  </Routes>
+)
 }

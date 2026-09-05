@@ -3,8 +3,10 @@ import Cards from '../cards'
 export default function HeaderP3() {
   return (
     <div className='mt-30'>
-        <h2 dir='rtl' className='font-semibold text-4xl  font-vazir pr-45'>جدیدترین محصولات</h2>
-        <h3 className='text-xl pl-45 relative -top-8'>بیشتر</h3>
+        <div className='w-full flex justify-between items-center pb-4'>
+        <h3 className='text-xl '>بیشتر</h3>
+        <h3 dir='rtl' className=''>جدید ترین محصولات</h3>
+      </div>
         <div className='flex justify-center gap-4'>
                 <Cards name="طناب ورزشی 1.5 متری مدل 023" price="98,000" img="/productNew/rope.png" />
                 <Cards name="کلاه محافظ دوچرخه سواری حرفه ای مدل limar" price="1,450,000" img="/productNew/helmet.png" />

@@ -3,9 +3,9 @@ import Cards from '../cards'
 export default function FooterBEnd() {
   return (
     <div>
-      <div className=''>
-        <h3 dir='rtl' className='font-semibold text-4xl  font-vazir pr-45'>پیشنهاد ما</h3>
-        <h3 className='text-xl pl-45 relative -top-8'>بیشتر</h3>
+      <div className='w-full flex justify-between items-center pb-4'>
+        <h3 className='text-xl '>بیشتر</h3>
+        <h3 dir='rtl' className=''>پیشنهاد ما</h3>
       </div>
       <div className='flex justify-center gap-4'>
         <Cards name="کفش کوهنوردی مردانه مدل RUNNER" price="3,980,000" img="/productSuggest/shoes.png" />
