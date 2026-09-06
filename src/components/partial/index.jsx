@@ -105,7 +105,7 @@ export default function Layout({ children }) {
           <p className='text-[26px] text-[#FFFFFF] w-45/100 text-right'>فروشگاه آکو اسپرت افتخار عرضه حضوری و مجازی محصولات متنوع کوهنوردی طبیعت گردی و لوازم آفرود با قیمت بسیار مناسب کیفیت مطلوب و فراهم سازی بستری مطمئن جهت خرید آسان و با رضایت و اطمینان خاطر کامل مشتریان عزیز این مجموعه را در کارنامه خود دارد.</p>
         </div>
         <hr className='w-full bg-[#FFFFFF40] border-none h-[1px]' />
-        <p className='text-[32px] text-[#FFFFFFB2] mb-10'>تمامی حقوق برای Ako Sport محفوظ است.</p>
+        <p className='text-[32px] text-[#FFFFFFB2] mb-10'>محفوظ است <span>Ako Sport</span> تمامی حقوق برای</p>
       </footer>
     </div >
   )

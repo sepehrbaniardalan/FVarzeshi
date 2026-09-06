@@ -40,7 +40,7 @@ export default function Products() {
       <div className='flex gap-5'>
         <div className='flex gap-5'>
           {sort.map((item, index) => (
-            <button className={`text-[22px] font-normal ${Value === item.value ? "text-[#F0C400]" : "text-[#000000BF]"}`} onClick={() => btnhandler(item)} key={index}>{item.name}</button>
+            <button className={`text-[22px] cursor-pointer font-normal ${Value === item.value ? "text-[#F0C400]" : "text-[#000000BF]"}`} onClick={() => btnhandler(item)} key={index}>{item.name}</button>
           ))}
         </div>
         <p className='flex justify-center items-center text-[22px] font-normal'><span>:</span>مرتب سازی</p>
@@ -53,24 +53,24 @@ export default function Products() {
       <div className='flex flex-wrap gap-5 w-full justify-center mt-5'>
         {currentProduct.map((item, index) => (
           <div key={index} className='w-180/1000  shadow-[0_0_15px_rgba(0,0,0,0.12)] rounded-2xl border-none flex flex-col gap-3 justify-center items-center'>
-            <div className='relative right-[95px] w-3/10 flex flex-col justify-center items-center top-6'>
+            <div className='relative mr-auto w-3/10 flex flex-col justify-center items-center top-4'>
               <img src={item.img}  alt="" className='absolute ' />
 
-              <p className={`relative bottom-3 right-2 text-[20px]  ${item.img ? "flex" : "hidden"} -rotate-45 `} >25%</p>
+              <p className={`relative bottom-2 right-1 text-[20px]  ${item.img ? "flex" : "hidden"} -rotate-45 `} >25%</p>
             </div>
             <Link to={`/Detail/${item.id}`}>
               <img src={item.image} alt="" className='size-45' />
             </Link>
             <p className='text-right w-full text-[14px] mb-10 mr-2 leading-5'>{item.title}</p>
-            <p className={` flex ${item.price ? "hidden" : "flex"} text-[24px] text-[#FFB800] gap-1 `}><span className={`${toPersianNumber(item.newprice) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.newprice)}</p>
-            <p className={` flex ${item.price ? "hidden" : "flex"} text-[16px] text-[#000000B2] line-through gap-1`}><span className={`${toPersianNumber(item.oldPrice) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.oldPrice)}</p>
-            <p className={`flex text-[24px] ${item.newprice || item.oldPrice ? "hidden" : "flex"} font-normal gap-1`} ><span className={`${(item.price) ? "flex" : "hidden"}`}>تومان</span>{toPersianNumber(item.price)}</p>
+            <p className={` flex ${item.price ? "hidden" : "flex"} text-[24px] text-[#FFB800] gap-1 `}><span className={`${toPersianNumber(item.newprice) ? "flex" : "hidden"}`}>تومان</span>{item.newprice ? (toPersianNumber(item.newprice.toLocaleString())) : ""}</p>
+            <p className={` flex ${item.price ? "hidden" : "flex"} text-[16px] text-[#000000B2] line-through `}><span className={`${toPersianNumber(item.oldPrice) ? "flex" : "hidden"}`}>تومان</span>{item.oldPrice ? (toPersianNumber(item.oldPrice.toLocaleString())) : ""}</p>
+            <p className={`flex text-[24px] ${item.newprice || item.oldPrice ? "hidden" : "flex"} font-normal gap-1`} ><span className={`${(item.price) ? "flex" : "hidden"}`}>تومان</span>{item.price ? (toPersianNumber(item.price.toLocaleString())) : ""}</p>
           </div>
 
         ))}
         <div className='flex gap-5 mt-10 mb-10 flex-row-reverse'>
           {Array.from({ length: totalPage }, (_, index) => (
-            <button className={`rounded-2xl p-3 w-15 text-[20px] ${currentPage === index + 1 ? "bg-[#FFB800] border-none text-white" : "bg-white text-[#282828] border border-[#282828]"}`} onClick={() => setCurrentPage(index + 1)} key={index}>
+            <button className={`rounded-2xl cursor-pointer p-3 w-15 text-[20px] ${currentPage === index + 1 ? "bg-[#FFB800] border-none text-white" : "bg-white text-[#282828] border border-[#282828]"}`} onClick={() => setCurrentPage(index + 1)} key={index}>
               {index + 1}
             </button>
           ))}
