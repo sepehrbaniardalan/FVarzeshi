@@ -4,7 +4,7 @@ export default function Login2() {
     <div className="flex">
     <div><img src="./sportLogin.png" alt="" className='w-1/2 mt-20 ml-17'/></div>
     
-    <div dir="rtl" className="min-h-screen w-full bg-white flex items-start justify-center pt-16 px-6 mt-25 mr-20">
+    <div dir="rtl" className=" w-full bg-white flex items-start justify-center pt-16 px-6 mt-25 mr-20">
       <div className="w-full max-w-sm">
         <div className="flex items-center gap-2 mb-10">
           <span className="w-1 h-9 bg-yellow-400 rounded-full" />
