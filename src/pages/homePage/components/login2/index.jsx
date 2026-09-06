@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export default function Login2() {
   return (
     <div className="flex">
-    <div><img src="./sportLogin.png" alt="" className='w-3/5 mt-20 ml-17'/></div>
+    <div><img src="./sportLogin.png" alt="" className='w-1/2 mt-20 ml-17'/></div>
     
     <div dir="rtl" className="min-h-screen w-full bg-white flex items-start justify-center pt-16 px-6 mt-25 mr-20">
       <div className="w-full max-w-sm">
@@ -34,8 +34,8 @@ export default function Login2() {
             </svg>
           </span>
         </div>
-        <div className="text-left mb-8">
-          <span className="text-xs text-yellow-500 font-medium flex ">
+        <div className="text-left mb-5">
+          <span className="text-xs text-yellow-500 font-medium flex pt-2">
             فراموشی رمز عبور
           </span>
         </div>

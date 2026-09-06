@@ -13,8 +13,8 @@ export default function Login() {
             </div>
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="نام خانوادگی" className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-700 placeholder-gray-400 text-right focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent" />
                 <input type="text" placeholder="نام" className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-700 placeholder-gray-400 text-right focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent" />
+                <input type="text" placeholder= "نام خانوادگی" className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-700 placeholder-gray-400 text-right focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent" />
               </div>
               <input type="tel" placeholder="شماره موبایل" className="w-full rounded-xl border border-gray-300 px-4 py-3.5 text-sm text-gray-700 placeholder-gray-400 text-right focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"/>
               <div className="relative">
@@ -33,8 +33,8 @@ export default function Login() {
                   </svg>
                 </span>
               </div>
-              <div className="flex items-center justify-end gap-2 pt-1">
-                <a href="" className="text-sm text-amber-500 hover:underline">پذیرفتن حریم خصوصی</a>
+              <div className="flex  justify-start gap-2 pt-1">
+                <a href=""   className="text-sm text-amber-500 hover:underline ">پذیرفتن حریم خصوصی</a>
                 <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-amber-400 focus:ring-amber-400" />
               </div>
               <button type="submit" className="w-full bg-amber-400 hover:bg-amber-500 transition-colors text-white font-bold py-4 rounded-xl mt-2"> ثبت نام</button>

@@ -5,7 +5,7 @@ export default function Body3() {
     <div>
       <div className='w-full flex justify-between items-center pb-4'>
         <h3 className='text-xl '>بیشتر</h3>
-        <h3 dir='rtl' className=''>پرفروش ترین محصولات</h3>
+        <h3 dir='rtl' className='text-4xl font-semibold pb-3'>پرفروش ترین محصولات</h3>
       </div>
       <div className='flex justify-center gap-4'>
         <Cards name="کیسه خواب کوهنوردی 1.8 متری" price="3,980,000" img="/porFProducts/479c73f2edbc0d769f641e8eaa69ddfdc32574d4.png" />

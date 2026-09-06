@@ -20,9 +20,9 @@ export default function Body4() {
                 <div key={index} className="relative w-[380px] h-[255px] overflow-hidden rounded-3xl" >
                     <img src={card.img} alt="" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-black/45"></div>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 text-white">
+                    <div className="absolute inset-0 flex flex-col  justify-center gap-5 text-white pr-3 pb-8">
                         <h2 className="text-xl font-bold">{card.title}</h2>
-                        <button className="rounded-full bg-white/30 px-6 py-2 text-sm font-semibold">مشاهده</button>
+                        <button className="rounded-full bg-white/30 px-6 py-2 text-sm font-semibold w-25">مشاهده</button>
                     </div>
                 </div>
             ))}

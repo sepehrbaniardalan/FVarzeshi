@@ -5,7 +5,7 @@ export default function HeaderP3() {
     <div className='mt-30'>
         <div className='w-full flex justify-between items-center pb-4'>
         <h3 className='text-xl '>بیشتر</h3>
-        <h3 dir='rtl' className=''>جدید ترین محصولات</h3>
+        <h3 dir='rtl' className='text-4xl font-semibold pb-3'>جدید ترین محصولات</h3>
       </div>
         <div className='flex justify-center gap-4'>
                 <Cards name="طناب ورزشی 1.5 متری مدل 023" price="98,000" img="/productNew/rope.png" />
